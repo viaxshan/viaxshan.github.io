@@ -22,6 +22,7 @@
     --yellow: #f4c95d;
     --pastel-mint: #c9f0e3;
     --pastel-sky: #cfe9f3;
+    --pastel-pink: #ffdcdf;
     --line: #cfe7e3;
     --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     --sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -280,7 +281,8 @@
   }
   .skill-chip.c-lang{ background: var(--pastel-mint); border-color: var(--accent-3); }
   .skill-chip.c-tool{ background: var(--pastel-sky); border-color: #a9d3e6; }
-  .skill-chip.c-interest{ background: var(--coral-soft); border-color: #ffc7ae; }
+  .skill-chip.c-programming{ background: var(--pastel-pink); border-color: #d68d93; }
+  .skill-chip.c-additional{ background: var(--coral-soft); border-color: #ffc7ae; }
 
   /* ---------- Projects grid ---------- */
   .projects-grid{
@@ -574,12 +576,22 @@
         </div>
       </div>
       <div class="skill-group">
+        <div class="skill-group-label">programming</div>
+        <div class="skill-row">
+          <span class="skill-chip c-programming">Object Oriented Programming</span>
+          <span class="skill-chip c-programming">Data Structures and Algorithms</span>
+          <span class="skill-chip c-programming">Runtime</span>
+          <span class="skill-chip c-programming">P5.js</span>
+          <span class="skill-chip c-programming">Pycharm</span>
+        </div>
+      </div>
+      <div class="skill-group">
         <div class="skill-group-label">additional</div>
         <div class="skill-row">
-          <span class="skill-chip c-interest">Mathematics</span>
-          <span class="skill-chip c-interest">UI Design</span>
-          <span class="skill-chip c-interest">Game Dev</span>
-          <span class="skill-chip c-interest">Graphic Design</span>
+          <span class="skill-chip c-additional">Mathematics</span>
+          <span class="skill-chip c-additional">UI Design</span>
+          <span class="skill-chip c-additional">Game Dev</span>
+          <span class="skill-chip c-additional">Graphic Design</span>
         </div>
       </div>
     </div>

@@ -163,6 +163,67 @@
             object-fit: contain;    
             border-radius: 4px;  
             margin-bottom: 1rem;   
+            
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            
+            aspect-ratio: 16 / 9; 
+            
+            margin: 1rem 0;
+            overflow: hidden;
+            border-radius: 6px;
+            background-color: #0b0f19;
+        }
+        
+        .carousel-track {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.4s ease-in-out;
+        }
+        
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .project-img-slide, 
+        .project-video-slide {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain; 
+        }
+        
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.65);
+            color: #ffffff;
+            border: none;
+            font-size: 1.2rem;
+            padding: 0.6rem 0.8rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.2s, color 0.2s;
+            user-select: none;
+            z-index: 5;
+        }
+        
+        .carousel-btn:hover {
+            background-color: var(--accent);
+            color: var(--bg-color);
+        }
+        
+        .prev-btn { left: 8px; }
+        .next-btn { right: 8px; }
+
 }
         
     </style>
@@ -206,7 +267,23 @@
                 <!-- Project 1 -->
                 <div class="card">
                     <h3>Dress Up!</h3>
-                    <img src="dressupscreen.png" alt="Dress up menu!" class="project-img">
+                        <div class="carousel-container" id="project1-carousel">
+                            <div class="carousel-track">
+                                <!-- Slide 1: Full Image -->
+                                <div class="carousel-slide">
+                                    <img src="dressupscreen.png" alt="Project Screenshot" class="project-img-slide">
+                                </div>
+                                <!-- Slide 2: Full Video -->
+                                <div class="carousel-slide">
+                                    <video class="project-video-slide" controls loop muted playsinline>
+                                        <source src="dressupdemo.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+
+                            <button class="carousel-btn prev-btn" onclick="moveSlide('project1-carousel', -1)">&#10094;</button>
+                            <button class="carousel-btn next-btn" onclick="moveSlide('project1-carousel', 1)">&#10095;</button>
+                        </div>
                     <p>A character customization game that is easy to use and simple to navigate. Made with github user pusheen5000000</p>
                     <a href="https://github.com/pusheen5000000/dressup/tree/main" class="btn">View Code</a>
                 </div>
@@ -235,4 +312,28 @@
     </div>
 
 </body>
+    <script>
+    const carouselPositions = {};
+
+    function moveSlide(carouselId, direction) {
+        const carousel = document.getElementById(carouselId);
+        const track = carousel.querySelector('.carousel-track');
+        const slides = carousel.querySelectorAll('.carousel-slide');
+        
+        if (carouselPositions[carouselId] === undefined) {
+            carouselPositions[carouselId] = 0;
+        }
+
+        carouselPositions[carouselId] += direction;
+
+        if (carouselPositions[carouselId] >= slides.length) {
+            carouselPositions[carouselId] = 0;
+        } else if (carouselPositions[carouselId] < 0) {
+            carouselPositions[carouselId] = slides.length - 1;
+        }
+
+        const amountToMove = carouselPositions[carouselId] * -100;
+        track.style.transform = `translateX(${amountToMove}%)`;
+    }
+</script>
 </html>

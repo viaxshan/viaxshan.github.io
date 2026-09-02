@@ -90,9 +90,9 @@
     color: #ffffff;
   }
   .ticker-track{
-    display: flex;
+    display: inline-block;
     width: max-content;
-    animation: ticker-scroll 20s linear infinite;
+    animation: ticker-scroll 6.5s linear infinite;
   }
   .ticker-track span{
     font-family: var(--mono);
@@ -100,13 +100,15 @@
     letter-spacing: 0.02em;
     padding: 0.5rem 0;
     white-space: nowrap;
+    display: inline-block;
   }
   .ticker-track span::after{ content: "  ✦  welcome to my portfolio!  ✦  glad you're here ^_^  ✦  take a look around!   "; }
   @keyframes ticker-scroll{
-    from{ transform: translateX(0); }
-    to{ transform: translateX(-50%); }
+    0%{ transform: translateX(100vw); }
+    60%{ transform: translateX(-100%); }
+    100%{ transform: translateX(-100%); }
   }
-  @media (prefers-reduced-motion: reduce){ .ticker-track{ animation: none; } }
+  @media (prefers-reduced-motion: reduce){ .ticker-track{ animation: none; transform: translateX(0); } }
 
   /* ---------- Windows-style window chrome ---------- */
   .win{
@@ -501,7 +503,6 @@
 <header class="site-header">
   <div class="ticker-bar">
     <div class="ticker-track">
-      <span></span>
       <span></span>
     </div>
   </div>

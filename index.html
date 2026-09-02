@@ -7,7 +7,7 @@
     <style>
         /* Modern CSS Variables for easy color changes */
         :root {
-            --bg-color: #d8dfe8; 
+            --bg-color: #f2f2f2; 
             --card-color: #c8d8e4; 
             --text-main: #38647f;  
             --text-muted: #4a778d; 
@@ -131,6 +131,28 @@
             font-size: 0.85rem;
             font-weight: 500;
         }
+        /* Contact Section Button Layout */
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .contact-btn {
+            margin-top: 0; /* Overrides the default layout margin */
+            padding: 0.75rem 1.5rem;
+            text-align: center;
+            min-width: 130px;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            background-color: var(--text-main);
+            color: var(--bg-color);
+        }
+        
     </style>
 </head>
 <body>
@@ -182,6 +204,18 @@
                     <a href="https://github.com/Tabel0112/CSC111-Project-2" class="btn">View Code</a>
                 </div>
 
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section>
+            <h2>Connect With Me</h2>
+            <p>Feel free to reach out or check out my profiles across the web:</p>
+            
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/oliviashanliu/" class="btn contact-btn" target="_blank">LinkedIn</a>
+                <a href="https://github.com/viaxshan" class="btn contact-btn" target="_blank">GitHub</a>
+                <a href="https://devpost.com/viaxshan" class="btn contact-btn" target="_blank">Devpost</a>
             </div>
         </section>
     </div>

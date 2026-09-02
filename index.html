@@ -87,7 +87,12 @@
             border-radius: 8px;
             border: 1px solid #334155;
             transition: transform 0.2s ease, border-color 0.2s ease;
+            
+            /* Forces everything inside the card to stack vertically */
+            display: flex;
+            flex-direction: column;
         }
+
 
         .card:hover {
             transform: translateY(-5px);
@@ -199,9 +204,9 @@
             <div class="grid">
                 
                 <!-- Project 1 -->
-                <img src="dressupscreen.png" alt="Dress up menu!" class="project-img">
                 <div class="card">
                     <h3>Dress Up!</h3>
+                    <img src="dressupscreen.png" alt="Dress up menu!" class="project-img">
                     <p>A character customization game that is easy to use and simple to navigate. Made with github user pusheen5000000</p>
                     <a href="https://github.com/pusheen5000000/dressup/tree/main" class="btn">View Code</a>
                 </div>

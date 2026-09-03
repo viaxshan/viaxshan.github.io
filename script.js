@@ -51,7 +51,7 @@ document.addEventListener('click', (e) => {
 // Mascot walk cycle on hover/focus
 (function () {
   const idleFrame = 'mars_standing.png';
-  const walkFrames = ['mars_standing.png', 'mars_standing2.png', 'mars_standing3.png'];
+  const walkFrames = ['mars_standing2.png', 'mars_standing3.png'];
   const frameDelayMs = 180;
   let frameIndex = 0;
   let walkTimer = null;

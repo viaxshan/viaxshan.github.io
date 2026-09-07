@@ -331,6 +331,46 @@ h2{
 .skill-chip.c-programming{ background: var(--pastel-pink); border-color: #eca8ae; }
 .skill-chip.c-additional{ background: var(--coral-soft); border-color: #ffc7ae; }
 
+/* ---------- Education ---------- */
+.edu-header{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+.edu-degree{
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--ink);
+  margin-bottom: 0.2rem;
+}
+.edu-school{
+  color: var(--ink-soft);
+  font-size: 0.94rem;
+}
+.edu-meta{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.edu-chip{
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  background: var(--pastel-mint);
+  border: 1px solid var(--accent-3);
+  color: var(--ink);
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.coursework{
+  border-top: 1px solid var(--line);
+  padding-top: 1.1rem;
+}
+
 /* ---------- Projects grid ---------- */
 .projects-grid{
   display: grid;

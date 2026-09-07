@@ -164,22 +164,15 @@ a{ color: inherit; }
 .nav-bar{
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 0.75rem;
-  padding: 0.55rem 0.6rem 0.55rem 0.95rem;
+  padding: 0.55rem;
   background: rgba(255,255,255,0.9);
   backdrop-filter: blur(8px);
   border: none;
   border-radius: 10px;
 }
 html[data-theme="dark"] .nav-bar{ background: rgba(18,49,48,0.9); }
-
-.nav-brand{
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 0.95rem;
-  color: var(--ink);
-}
 
 .menu-toggle{
   background: transparent;
@@ -226,15 +219,17 @@ html[data-theme="dark"] .nav-bar{ background: rgba(18,49,48,0.9); }
   overflow: hidden;
   margin-top: 0.5rem;
   background: rgba(255,255,255,0.95);
-  border: 1px solid var(--line);
+  border: 1px solid transparent;
   border-radius: 10px;
-  box-shadow: 0 14px 30px -20px rgba(23,138,138,0.4);
-  transition: max-height 0.25s ease, padding 0.25s ease;
+  box-shadow: none;
+  transition: max-height 0.25s ease, padding 0.25s ease, border-color 0.15s ease, box-shadow 0.15s ease;
 }
 html[data-theme="dark"] .menu-panel{ background: rgba(18,49,48,0.95); }
 .menu-panel.open{
   max-height: 340px;
   padding: 0.45rem;
+  border-color: var(--line);
+  box-shadow: 0 14px 30px -20px rgba(23,138,138,0.4);
 }
 .menu-panel a, .theme-toggle{
   font-family: var(--display);

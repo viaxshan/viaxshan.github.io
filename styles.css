@@ -214,7 +214,8 @@ html[data-theme="dark"] .nav-bar{ background: rgba(18,49,48,0.9); }
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
-  width: 200px;
+  width: max-content;
+  min-width: 140px;
   max-height: 0;
   overflow: hidden;
   margin-top: 0.5rem;
@@ -227,7 +228,7 @@ html[data-theme="dark"] .nav-bar{ background: rgba(18,49,48,0.9); }
 html[data-theme="dark"] .menu-panel{ background: rgba(18,49,48,0.95); }
 .menu-panel.open{
   max-height: 340px;
-  padding: 0.45rem;
+  padding: 0.4rem;
   border-color: var(--line);
   box-shadow: 0 14px 30px -20px rgba(23,138,138,0.4);
 }
@@ -237,7 +238,7 @@ html[data-theme="dark"] .menu-panel{ background: rgba(18,49,48,0.95); }
   font-size: 0.9rem;
   text-decoration: none;
   color: var(--ink-soft);
-  padding: 0.65rem 0.9rem;
+  padding: 0.55rem 0.7rem;
   border-radius: 7px;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
@@ -340,6 +341,9 @@ h2{
   font-weight: 600;
   font-size: 1rem;
   color: var(--ink);
+}
+.edu-line-degree{
+  font-size: 1.1rem;
 }
 .coursework{
   border-top: 1px solid var(--line);

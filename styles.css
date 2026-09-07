@@ -504,23 +504,31 @@ h2{
   height: 16px;
   flex-shrink: 0;
 }
-.brand-badge{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
+.brand-mark{
+  width: 16px;
+  height: 16px;
   flex-shrink: 0;
+  display: inline-block;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
 }
-.brand-badge .brand-logo{
-  width: 12px;
-  height: 12px;
-  display: block;
+.brand-mark-linkedin{
+  -webkit-mask-image: url('https://cdn.simpleicons.org/linkedin/000000');
+  mask-image: url('https://cdn.simpleicons.org/linkedin/000000');
 }
-.brand-linkedin{ background: #0A66C2; }
-.brand-github{ background: #181717; }
-.brand-devpost{ background: #003E54; }
+.brand-mark-github{
+  -webkit-mask-image: url('https://cdn.simpleicons.org/github/000000');
+  mask-image: url('https://cdn.simpleicons.org/github/000000');
+}
+.brand-mark-devpost{
+  -webkit-mask-image: url('https://cdn.simpleicons.org/devpost/000000');
+  mask-image: url('https://cdn.simpleicons.org/devpost/000000');
+}
 .contact-btn:hover{ border-color: var(--accent); color: var(--accent); background: var(--pastel-mint); }
 
 /* ---------- Mouse trail ---------- */

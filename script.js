@@ -58,6 +58,8 @@ function moveSlide(carouselId, direction) {
       closeMenu();
     }
   });
+
+  window.addEventListener('scroll', closeMenu, { passive: true });
 })();
 
 // Dark mode toggle

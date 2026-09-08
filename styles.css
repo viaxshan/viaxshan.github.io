@@ -518,16 +518,16 @@ h2{
   mask-size: contain;
 }
 .brand-mark-linkedin{
-  -webkit-mask-image: url('https://cdn.simpleicons.org/linkedin/000000');
-  mask-image: url('https://cdn.simpleicons.org/linkedin/000000');
+  -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/linkedin.svg');
+  mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/linkedin.svg');
 }
 .brand-mark-github{
-  -webkit-mask-image: url('https://cdn.simpleicons.org/github/000000');
-  mask-image: url('https://cdn.simpleicons.org/github/000000');
+  -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/github.svg');
+  mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/github.svg');
 }
 .brand-mark-devpost{
-  -webkit-mask-image: url('https://cdn.simpleicons.org/devpost/000000');
-  mask-image: url('https://cdn.simpleicons.org/devpost/000000');
+  -webkit-mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/devpost.svg');
+  mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/devpost.svg');
 }
 .contact-btn:hover{ border-color: var(--accent); color: var(--accent); background: var(--pastel-mint); }
 

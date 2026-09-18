@@ -143,3 +143,22 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     dot.addEventListener('animationend', () => dot.remove());
   });
 }
+// Fade sections in/out on scroll
+(function () {
+  const targets = document.querySelectorAll('.hero, section');
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  targets.forEach((el) => el.classList.add('reveal'));
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle('visible', entry.isIntersecting);
+      });
+    },
+    { threshold: 0, rootMargin: '0px 0px -15% 0px' }
+  );
+
+  targets.forEach((el) => observer.observe(el));
+})();

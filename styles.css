@@ -78,8 +78,24 @@ a{ color: inherit; }
 .ticker-bar{
   width: 100%;
   overflow: hidden;
-  background: linear-gradient(90deg, var(--accent-2), var(--accent));
-  color: #ffffff;
+  background: linear-gradient(90deg,
+    var(--pastel-mint) 0%,
+    var(--accent-3) 35%,
+    var(--pastel-sky) 70%,
+    var(--pastel-mint) 100%);
+  color: var(--ink);
+  border-bottom: 1.5px solid var(--surface);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+html[data-theme="dark"] .ticker-bar{
+  background: linear-gradient(90deg,
+    var(--bg-soft) 0%,
+    #1f5b52 35%,
+    var(--pastel-sky) 70%,
+    var(--bg-soft) 100%);
+  border-bottom-color: var(--line);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
 }
 .ticker-track{
   display: inline-block;
@@ -93,6 +109,7 @@ a{ color: inherit; }
   padding: 0.5rem 0;
   white-space: nowrap;
   display: inline-block;
+  font-weight: 500;
 }
 .ticker-track span::after{ content: "  ✦  welcome to my portfolio!  ✦  glad you're here ^_^  ✦  take a look around!  ✦ "; }
 @keyframes ticker-scroll{

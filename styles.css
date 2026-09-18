@@ -598,3 +598,25 @@ footer{
 @media (max-width: 560px){
   .mascot-img{ width: 56px; }
 }
+
+/* ---------- Scroll reveal + hover lift ---------- */
+.reveal{
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.reveal.visible{
+  opacity: 1;
+  transform: none;
+}
+.reveal.visible:hover{
+  transform: scale(1.015);
+}
+
+@media (prefers-reduced-motion: reduce){
+  .reveal, .reveal.visible, .reveal.visible:hover{
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

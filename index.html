@@ -152,7 +152,39 @@
 
     <div class="projects-grid">
 
-      <!-- Featured project -->
+      <!-- PawFocus (featured, top) -->
+      <div class="card featured">
+        <div class="card-tab">PawFocus_Break.png</div>
+        <div class="carousel-container" id="pawfocus-carousel">
+          <div class="carousel-track">
+            <div class="carousel-slide">
+              <img src="PawFocus_Break.png" alt="PawFocus break reminder screenshot" class="project-img-slide">
+            </div>
+            <div class="carousel-slide">
+              <img src="PawFocus_2.png" alt="PawFocus screenshot" class="project-img-slide">
+            </div>
+            <div class="carousel-slide">
+              <video class="project-video-slide" controls loop muted playsinline>
+                <source src="pawfocus_demo.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <button class="carousel-btn prev-btn" onclick="event.stopPropagation(); moveSlide('pawfocus-carousel', -1)" aria-label="Previous media">&#10094;</button>
+          <button class="carousel-btn next-btn" onclick="event.stopPropagation(); moveSlide('pawfocus-carousel', 1)" aria-label="Next media">&#10095;</button>
+        </div>
+        <div class="card-body">
+          <h3>PawFocus</h3>
+          <div class="tag-row">
+            <span class="tag">Python</span>
+            <span class="tag">productivity</span>
+            <span class="tag">pixel art</span>
+          </div>
+          <p>A productivity app with a kitty study buddy! Drag the kitty around your screen, and it studies alongside you until it's time to take a break.</p>
+          <a href="https://github.com/YOUR-USERNAME/PawFocus" class="btn">View code</a>
+        </div>
+      </div>
+      
+      <!-- Featured project Dressup-->
       <div class="card featured">
         <div class="card-tab">dressupscreen.png</div>
         <div class="carousel-container" id="project1-carousel">

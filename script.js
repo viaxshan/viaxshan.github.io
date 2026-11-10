@@ -162,3 +162,105 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 
   targets.forEach((el) => observer.observe(el));
 })();
+
+// ---------- Projects popup ----------
+const projects = {
+  pawfocus: {
+    file: 'PawFocus.png',
+    title: 'PawFocus',
+    tags: ['Python', 'productivity', 'pixel art'],
+    desc: "A productivity app with a kitty study buddy! Drag the kitty around your screen, and it studies alongside you until it's time to take a break.",
+    media: [
+      { type: 'img', src: 'PawFocus_2.png', alt: 'PawFocus screenshot' },
+      { type: 'img', src: 'PawFocus_Break.png', alt: 'PawFocus break reminder screenshot' },
+      { type: 'video', src: 'PawFocus Demo.mp4' }
+    ],
+    links: [{ label: 'View code', href: 'https://github.com/viaxshan/PawFocus' }]
+  },
+  dressup: {
+    file: 'dressup.png',
+    title: 'Dress Up!',
+    tags: ['Unity', 'C#', 'hand-drawn art'],
+    desc: 'A character customization game, built with github user pusheen5000000 ^_^',
+    media: [
+      { type: 'img', src: 'dressupscreen.png', alt: 'Dress Up! screenshot' },
+      { type: 'video', src: 'dressupdemo.mp4' }
+    ],
+    links: [{ label: 'View code', href: 'https://github.com/pusheen5000000/dressup/tree/main' }]
+  },
+  econ: {
+    file: 'economic_shock_sim.py',
+    title: 'Economic Shock Simulator',
+    tags: ['Python', 'weighted graphs', 'school project'],
+    desc: 'A UI for simulating economic shocks with weighted graphs, letting users customize the underlying data. Built as a school project.',
+    media: [],
+    links: [{ label: 'View code', href: 'https://github.com/Tabel0112/Economic-Shock-Simulator' }]
+  },
+  detective: {
+    file: 'detective_game.wip',
+    title: 'Detective Game',
+    tags: ['work in progress'],
+    desc: 'A mystery/detective game currently in the works — more details and a demo coming soon!',
+    media: [],
+    links: []
+  }
+};
+
+(function () {
+  const modal = document.getElementById('projectModal');
+  const carousel = document.getElementById('modalCarousel');
+  const track = carousel.querySelector('.carousel-track');
+  let lastFocus = null;
+
+  function openProject(id) {
+    const p = projects[id];
+    if (!p) return;
+    lastFocus = document.activeElement;
+
+    document.getElementById('modalFile').textContent = p.file;
+    document.getElementById('modalTitle').textContent = p.title;
+    document.getElementById('modalDesc').textContent = p.desc;
+    document.getElementById('modalTags').innerHTML =
+      p.tags.map((t) => `<span class="tag">${t}</span>`).join('');
+    document.getElementById('modalLinks').innerHTML =
+      p.links.map((l) => `<a class="btn" href="${l.href}" target="_blank" rel="noopener">${l.label}</a>`).join('');
+
+    // Build carousel (hidden if the project has no media)
+    carouselPositions['modalCarousel'] = 0;
+    track.style.transform = 'translateX(0)';
+    track.innerHTML = p.media.map((m) =>
+      m.type === 'video'
+        ? `<div class="carousel-slide"><video class="project-video-slide" controls loop muted playsinline><source src="${m.src}" type="video/mp4"></video></div>`
+        : `<div class="carousel-slide"><img class="project-img-slide" src="${m.src}" alt="${m.alt || ''}"></div>`
+    ).join('');
+    carousel.hidden = p.media.length === 0;
+    carousel.querySelectorAll('.carousel-btn').forEach((b) => {
+      b.style.display = p.media.length > 1 ? '' : 'none';
+    });
+
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+    document.getElementById('modalClose').focus();
+  }
+
+  function closeProject() {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+    track.innerHTML = ''; // stops any playing video
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll('.project-tile').forEach((tile) => {
+    tile.addEventListener('click', () => openProject(tile.dataset.project));
+  });
+  document.getElementById('modalClose').addEventListener('click', closeProject);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeProject(); });
+  document.addEventListener('keydown', (e) => {
+    if (!modal.classList.contains('open')) return;
+    if (e.key === 'Escape') closeProject();
+    if (e.key === 'ArrowLeft') moveSlide('modalCarousel', -1);
+    if (e.key === 'ArrowRight') moveSlide('modalCarousel', 1);
+  });
+})();

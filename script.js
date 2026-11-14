@@ -200,7 +200,7 @@ const projects = {
     ],
     links: [{ label: 'View code', href: 'https://github.com/Tabel0112/Economic-Shock-Simulator' }]
   },
-  detective: {
+  paint: {
     file: 'virtual.paint.py',
     title: 'Virtual Paint',
     tags: ['Python', 'camera', 'interactive'],

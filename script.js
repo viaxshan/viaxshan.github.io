@@ -195,7 +195,9 @@ const projects = {
     title: 'Economic Shock Simulator',
     tags: ['Python', 'weighted graphs', 'school project'],
     desc: 'A UI for simulating economic shocks with weighted graphs, letting users customize the underlying data. Built as a school project.',
-    media: [],
+    media: [
+      { type: 'img,' src: 'macroshocksim.png', alt: 'Macro-Economic Shock Sim screenshot' }
+    ],
     links: [{ label: 'View code', href: 'https://github.com/Tabel0112/Economic-Shock-Simulator' }]
   },
   detective: {

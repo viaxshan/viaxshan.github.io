@@ -173,7 +173,9 @@ const projects = {
     media: [
       { type: 'img', src: 'PawFocus_2.png', alt: 'PawFocus screenshot' },
       { type: 'img', src: 'PawFocus_Break.png', alt: 'PawFocus break reminder screenshot' },
-      { type: 'video', src: 'PawFocus Demo.mp4' }
+      { type: 'img', src: 'PawFocus_3.png', alt: 'PawFocus To-Do list screenshot'},
+      { type: 'video', src: 'PawFocus Demo.mp4' },
+      { type: 'video', src: 'PawFocusDemo 2.mp4'}
     ],
     links: [{ label: 'View code', href: 'https://github.com/viaxshan/PawFocus' }]
   },

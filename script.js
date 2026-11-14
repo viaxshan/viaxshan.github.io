@@ -199,12 +199,14 @@ const projects = {
     links: [{ label: 'View code', href: 'https://github.com/Tabel0112/Economic-Shock-Simulator' }]
   },
   detective: {
-    file: 'detective_game.wip',
-    title: 'Detective Game',
-    tags: ['work in progress'],
-    desc: 'A mystery/detective game currently in the works — more details and a demo coming soon!',
-    media: [],
-    links: []
+    file: 'virtual.paint.py',
+    title: 'Virtual Paint',
+    tags: ['Python', 'camera', 'interactive'],
+    desc: 'A program that tracks movement of your hands through your camera and allows you to draw without touching the screen!',
+    media: [
+      { type: 'img,' src: 'Virtual Paint.png', alt: 'Virtual Paint screenshot' }
+    ],
+    links: [{ label: 'View code', href: 'https://github.com/viaxshan/Virtual-Paint' }]
   }
 };
 

@@ -196,7 +196,7 @@ const projects = {
     tags: ['Python', 'weighted graphs', 'school project'],
     desc: 'A UI for simulating economic shocks with weighted graphs, letting users customize the underlying data. Built as a school project.',
     media: [
-      { type: 'img,' src: 'macroshocksim.png', alt: 'Macro-Economic Shock Sim screenshot' }
+      { type: 'img', src: 'macroshocksim.png', alt: 'Macro-Economic Shock Sim screenshot' }
     ],
     links: [{ label: 'View code', href: 'https://github.com/Tabel0112/Economic-Shock-Simulator' }]
   },
@@ -206,7 +206,7 @@ const projects = {
     tags: ['Python', 'camera', 'interactive'],
     desc: 'A program that tracks movement of your hands through your camera and allows you to draw without touching the screen!',
     media: [
-      { type: 'img,' src: 'Virtual Paint.png', alt: 'Virtual Paint screenshot' }
+      { type: 'img', src: 'Virtual Paint.png', alt: 'Virtual Paint screenshot' }
     ],
     links: [{ label: 'View code', href: 'https://github.com/viaxshan/Virtual-Paint' }]
   }
